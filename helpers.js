@@ -121,3 +121,16 @@ export function getNextPageURLFromLinkHeader (link = '') {
   const result = link.match(/<([^>]+)>/)
   return result ? result[1] : ''
 }
+
+/**
+ * Проверяет, что все свойства Object равны undefined
+ * */
+export function checkProperties (obj) {
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (obj[key] !== undefined) return false
+    }
+    return true
+  }
+}
+
